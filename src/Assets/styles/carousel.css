@@ -1,0 +1,125 @@
+.carousel-item-container {
+    position: relative;
+    overflow: hidden; /* Ensure the image does not overflow the container */
+  }
+  
+  .carousel-item-container img {
+    animation: zoomInOut 5s infinite alternate; /* Apply the animation */
+  }
+  
+  .carousel-item-container:hover img {
+    transform: scale(1.1); /* Scale the image by 10% on hover */
+  }
+  
+  .text-container {
+    position: absolute;
+    top: 50%;
+    left: 200px;
+    transform: translateY(-50%);
+    color: white;
+  }
+  
+  .learn-more-btn {
+    background-color: transparent;
+    color: black;
+    border: 1px solid white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  .learn-more-btn:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  .learn-more-btn span {
+    margin-left: 5px;
+  }
+  .carousel-item-footer {
+    position: relative;
+  }
+  
+  .processing-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    width: 0;
+    background-color: red;
+    animation: moveLine 5s linear infinite;
+  }
+  
+  @keyframes moveLine {
+    0% { width: 0; }
+    100% { width: 100%; }
+  }
+  
+  
+
+  @keyframes zoomInOut {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1); /* Zoom in to 110% */
+    }
+    100% {
+      transform: scale(1); /* Return to original size */
+    }
+  }
+  .carousel-page-container {
+    display: flex;
+  }
+  
+  .carousel-container {
+    flex: 1;
+  }
+  
+
+
+
+
+
+  
+  #main-section {
+    flex: 1;
+    padding-top: 30px;
+    padding-left: 20px; /* Add padding to create space between carousel and text */
+  }
+  
+  .left-aligned {
+    text-align: left;
+  }
+
+  .place-card-image {
+    transition: transform 0.3s ease;
+  }
+  
+  .place-card-image:hover {
+    transform: scale(1.1);
+  }
+
+  .place-card-container1 {
+    padding: 20px; /* Add padding to create space */
+  }
+  
+  .outline-button-button {
+    border: 2px solid transparent; /* Set border to transparent */
+    background-color: transparent; /* Set background to transparent */
+    color: pink; /* Set text color to pink */
+    transition: all 0.3s ease; /* Add transition for smooth hover effect */
+  }
+  
+  .outline-button-button:hover {
+    background-color: transparent; /* Set hover background color to transparent */
+    border-color: pink; /* Set hover border color to pink */
+    color: white; /* Change text color on hover */
+  }
+  
+  
+  
+
