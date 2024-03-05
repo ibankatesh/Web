@@ -1,22 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState,useEffect} from 'react';
 import '../Assets/styles/header.css';
 import logo from '../Assets/images/NyK.png'; // Import your logo image
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes, faBars, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faTimes, faBars} from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faTwitter, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'; // Import brand icons
 import img5 from '../Assets/images/img5.jpg';
 import img6 from '../Assets/images/img6.jpg';
+import cr1 from '../Assets/images/cr1.jpg';
+import cr2 from '../Assets/images/cr2.jpg';
 
-import partners from '../Assets/images/partners.jpg';
 import aws from '../Assets/images/aws-partners.jpg';
 import azure from '../Assets/images/azure.png';
 
 import googlecloud from '../Assets/images/googlecloud.jpg';
-import Carousel from 'react-bootstrap/Carousel';
+
 import { Link } from 'react-router-dom';
 const Partners = () => {
-  const [visible, setVisible] = useState(true);
-  const [searchVisible, setSearchVisible] = useState(false); 
+  
+  const [visible] = useState(true);
   
 
   const handleLogoClick = () => {
@@ -24,16 +25,69 @@ const Partners = () => {
     window.location.href = '/';
 };
 
-const handleSearchClick = () => {
-    // Toggle the visibility of the search box
-    setSearchVisible(!searchVisible);
+
+const handleLogoClick1 = () => {
+  // Redirect to the home page
+  window.location.href = '/about-us';
 };
+
+
+useEffect(() => {
+  const nextDom = document.getElementById('next');
+  const prevDom = document.getElementById('prev');
+  const carouselDom = document.querySelector('.carousel');
+  const sliderDom = carouselDom.querySelector('.carousel .list');
+  const thumbnailBorderDom = document.querySelector('.carousel .thumbnail');
+
+  thumbnailBorderDom.appendChild(thumbnailBorderDom.querySelector('.item'));
+
+  let timeAutoNext = 7000;
+  let runNextAuto = setTimeout(() => {
+    nextDom.click();
+  }, timeAutoNext);
+
+  nextDom.onclick = function() {
+    showSlider('next');
+  };
+
+  prevDom.onclick = function() {
+    showSlider('prev');
+  };
+
+  let runTimeOut;
+  function showSlider(type) {
+    let sliderItems = sliderDom.querySelectorAll('.item');
+    let thumbnailItems = thumbnailBorderDom.querySelectorAll('.item');
+
+    if (type === 'next') {
+      sliderDom.appendChild(sliderItems[0]);
+      thumbnailBorderDom.appendChild(thumbnailItems[0]);
+      carouselDom.classList.add('next');
+    } else {
+      sliderDom.prepend(sliderItems[sliderItems.length - 1]);
+      thumbnailBorderDom.prepend(thumbnailItems[thumbnailItems.length - 1]);
+      carouselDom.classList.add('prev');
+    }
+    clearTimeout(runTimeOut);
+    runTimeOut = setTimeout(() => {
+      carouselDom.classList.remove('next');
+      carouselDom.classList.remove('prev');
+    }, 300);
+    clearTimeout(runNextAuto);
+    runNextAuto = setTimeout(() => {
+      nextDom.click();
+    }, timeAutoNext);
+  }
+}, []);  // Empty dependency array to run this effect only once
+
+
+
   return (
     <div>
-        <nav style={{ paddingTop: '30px', visibility: visible ? 'visible' : 'hidden', backgroundColor: 'transparent', position: 'fixed', width: '100%', zIndex: '1000' }}>
+        <nav className='nav1 navbar-scrolled'  style={{ visibility: visible ? 'visible' : 'hidden', backgroundColor:'#312f36',position: 'fixed', width: '100%', zIndex: '1000' }}>
       <div className="wrapper" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div className="logo" onClick={handleLogoClick}>
-          <img src={logo} alt="NyKinSky Logo" style={{ width: '80px', paddingTop: '10px', height: 'auto', cursor: 'pointer' }} />
+          <img src={logo} alt="NyKinSky Logo" className="logo" style={{ width: '80px', height: 'auto', paddingTop: '10px', cursor: 'pointer' }} />
         </div>
         <input type="radio" name="slider" id="menu-btn" />
         <input type="radio" name="slider" id="close-btn" />
@@ -57,27 +111,27 @@ const handleSearchClick = () => {
                   <li>
                   <Link to="/what-we-do">Aritifical Intelligence(AI)</Link>
                   </li>
-                  <li><a href="#">Cloud Transformation</a></li>
-                  <li><a href="#">Data Analytics</a></li>
-                  <li><a href="#">Managed Security Services</a></li>
+                  <li><Link to="#">Cloud Transformation</Link></li>
+                  <li><Link to="#">Data Analytics</Link></li>
+                  <li><Link to="#">Managed Security Services</Link></li>
                 </ul>
               </div>
               <div className="row">
                 <header>Digital Solution</header>
                 <ul className="mega-links">
-                  <li><a href="#">Scaled Operations</a></li>
-                  <li><a href="#">SaaS and Enterprise Apps</a></li>
-                  <li><a href="#">Next Gen Talent</a></li>
-                  <li><a href="#">Digital Services</a></li>
+                  <li><Link to="#">Scaled Operations</Link></li>
+                  <li><Link to="#">SaaS and Enterprise Apps</Link></li>
+                  <li><Link to="#">Next Gen Talent</Link></li>
+                  <li><Link to="#">Digital Services</Link></li>
                 </ul>
               </div>
               <div className="row">
                 <header>Platforms</header>
                 <ul className="mega-links">
-                  <li><a href="#">Cyber Proof</a></li>
-                  <li><a href="#">SmartOps</a></li>
-                  <li><a href="#">Privacy Seal</a></li>
-                  <li><a href="#">Website design</a></li>
+                  <li><Link to="#">Cyber Proof</Link></li>
+                  <li><Link to="#">SmartOps</Link></li>
+                  <li><Link to="#">Privacy Seal</Link></li>
+                  <li><Link to="#">Website design</Link></li>
                 </ul>
               </div>
             </div>
@@ -85,6 +139,7 @@ const handleSearchClick = () => {
         </li>
 
 
+        
         <li style={{ marginRight: '20px' }}>
         <Link to="/indsutries">Industries</Link>
           <input type="checkbox" id="showMega" />
@@ -93,31 +148,30 @@ const handleSearchClick = () => {
               <div className="row">
                 <img src={img6} alt="" />
               </div>
-              <div className="row">
-                <header>Design Services</header>
+              <div className="row">  
                 <ul className="mega-links">
-                  <li><a href="#">Graphics</a></li>
-                  <li><a href="#">Vectors</a></li>
-                  <li><a href="#">Business cards</a></li>
-                  <li><a href="#">Custom logo</a></li>
+                  <li><Link to="#">Retail</Link></li>
+                  <li><Link to="#">CPG</Link></li>
+                  <li><Link to="#">BFS</Link></li>
+                  <li><Link to="#">Insurance</Link></li>
+                  <li><Link to="#">Manufacturing</Link></li>
+                </ul>
+              </div>
+              <div className="row">  
+                <ul className="mega-links">
+                 
+                  <li><Link to="#">Transportation & logistics</Link></li>
+                  <li><Link to="#">Life Sciences</Link></li>
+                  <li><Link to="#">HealthCare</Link></li>
+                  <li><Link to="#">Technology, Telecom & Media  </Link></li>
                 </ul>
               </div>
               <div className="row">
-                <header>Email Services</header>
                 <ul className="mega-links">
-                  <li><a href="#">Personal Email</a></li>
-                  <li><a href="#">Business Email</a></li>
-                  <li><a href="#">Mobile Email</a></li>
-                  <li><a href="#">Web Marketing</a></li>
-                </ul>
-              </div>
-              <div className="row">
-                <header>Security services</header>
-                <ul className="mega-links">
-                  <li><a href="#">Site Seal</a></li>
-                  <li><a href="#">VPS Hosting</a></li>
-                  <li><a href="#">Privacy Seal</a></li>
-                  <li><a href="#">Website design</a></li>
+                  <li><Link to="#">Site Seal</Link></li>
+                  <li><Link to="#">VPS Hosting</Link></li>
+                  <li><Link to="#">Privacy Seal</Link></li>
+                  <li><Link to="#">Website design</Link></li>
                 </ul>
               </div>
             </div>
@@ -133,33 +187,34 @@ const handleSearchClick = () => {
           <div className="mega-box">
             <div className="content">
               <div className="row">
+                
                 <img src="img.jpg" alt="" />
               </div>
               <div className="row">
                 <header>Design Services</header>
                 <ul className="mega-links">
-                  <li><a href="#">Graphics</a></li>
-                  <li><a href="#">Vectors</a></li>
-                  <li><a href="#">Business cards</a></li>
-                  <li><a href="#">Custom logo</a></li>
+                  <li><Link to="#">Graphics</Link></li>
+                  <li><Link to="#">Vectors</Link></li>
+                  <li><Link to="#">Business cards</Link></li>
+                  <li><Link to="#">Custom logo</Link></li>
                 </ul>
               </div>
               <div className="row">
                 <header>Email Services</header>
                 <ul className="mega-links">
-                  <li><a href="#">Personal Email</a></li>
-                  <li><a href="#">Business Email</a></li>
-                  <li><a href="#">Mobile Email</a></li>
-                  <li><a href="#">Web Marketing</a></li>
+                  <li><Link to="#">Personal Email</Link></li>
+                  <li><Link to="#">Business Email</Link></li>
+                  <li><Link to="#">Mobile Email</Link></li>
+                  <li><Link to="#">Web Marketing</Link></li>
                 </ul>
               </div>
               <div className="row">
                 <header>Security services</header>
                 <ul className="mega-links">
-                  <li><a href="#">Site Seal</a></li>
-                  <li><a href="#">VPS Hosting</a></li>
-                  <li><a href="#">Privacy Seal</a></li>
-                  <li><a href="#">Website design</a></li>
+                  <li><Link to="#">Site Seal</Link></li>
+                  <li><Link to="#">VPS Hosting</Link></li>
+                  <li><Link to="#">Privacy Seal</Link></li>
+                  <li><Link to="#">Website design</Link></li>
                 </ul>
               </div>
             </div>
@@ -180,70 +235,150 @@ const handleSearchClick = () => {
             <div className="content">
               <div className="row">
               <ul className="mega-links">
-                  <li><a href="#">Visionary Viewpoints</a></li>
+                  <li><Link to="#">Visionary Viewpoints</Link></li>
                 
                 </ul>
               </div>
               <div className="row">
                 
                 <ul className="mega-links">
-                  <li><a href="#">Case Studies</a></li>
+                  <li><Link to="#">Case Studies</Link></li>
                 
                 </ul>
               </div>
               <div className="row">
                 
                 <ul className="mega-links">
-                  <li><a href="#">Insights</a></li>
+                  <li><Link to="#">Insights</Link></li>
                 </ul>
               </div>
               <div className="row">
               
                 <ul className="mega-links">
-                  <li><a href="#">WhitePapers</a></li>
+                  <li><Link to="#">WhitePapers</Link></li>
                 </ul>
               </div>
             </div>
           </div>
         </li>
         
-        <li style={{ marginRight: '20px' }}><a href="#">Careers</a></li>
-        
-          {/* Search box adjacent to the search icon */}
-          <li style={{ position: 'relative' }}>
-            <FontAwesomeIcon icon={faSearch} onClick={handleSearchClick} style={{ cursor: 'pointer' }} />
-            {searchVisible && (
-              <div className="search-box" style={{ position: 'absolute', top: '100%', left: 0, display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
-                {/* Your search box input and submit button */}
-                <input type="text" placeholder="Search..." style={{ marginRight: '10px' }} />
-                <button type="submit">Submit</button>
-              </div>
-            )}
-          </li>
+        <li style={{ marginRight: '20px' }}><Link to="#">Careers</Link></li>   
       </ul>
       <label htmlFor="menu-btn" className="btn menu-btn"><FontAwesomeIcon icon={faBars} /></label>
-      
     </div>
-    
-    <hr/>
+  
   </nav>
+  <div style={{ height: '90px' }}></div>
 
 
 
-  <Carousel >
-                <Carousel.Item>
-                    <div className="carousel-item-container">
-                        <img style={{ height: '90vh' }} className="d-block w-100" src={partners} alt="" />
-                        <div className="text-container">
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>   
-                        </div>
-                        <div className="processing-line" id="processing-line-1"></div> {/* Processing line */}
-                    </div>
-                </Carousel.Item>
+  <div className="carousel">
+      <div className="list">
+        <div className="item">
+          <img src={cr1} alt="1" />
+          <div className="content">
+            <div className="author">LUNDEV</div>
+            <div className="title">DESIGN SLIDER</div>
+            <div className="topic">ANIMAL</div>
+            <div className="des">
+              {/* Lorem ipsum text */}
+            </div>
+            <div className="buttons">
+              <button>SEE MORE</button>
+              <button>SUBSCRIBE</button>
+            </div>
+          </div>
+        </div>
+        <div className="item">
+          <img src={cr2} alt="2" />
+          <div className="content">
+            <div className="author">LUNDEV</div>
+            <div className="title">DESIGN SLIDER</div>
+            <div className="topic">ANIMAL</div>
+            <div className="des">
+              {/* Lorem ipsum text */}
+            </div>
+            <div className="buttons">
+              <button>SEE MORE</button>
+              <button>SUBSCRIBE</button>
+            </div>
+          </div>
+        </div>
+        <div className="item">
+          <img src={cr1} alt="3" />
+          <div className="content">
+            <div className="author">LUNDEV</div>
+            <div className="title">DESIGN SLIDER</div>
+            <div className="topic">ANIMAL</div>
+            <div className="des">
+              {/* Lorem ipsum text */}
+            </div>
+            <div className="buttons">
+              <button>SEE MORE</button>
+              <button>SUBSCRIBE</button>
+            </div>
+          </div>
+        </div>
+        <div className="item">
+          <img src={cr2} alt="4" />
+          <div className="content">
+            <div className="author">LUNDEV</div>
+            <div className="title">DESIGN SLIDER</div>
+            <div className="topic">ANIMAL</div>
+            <div className="des">
+              {/* Lorem ipsum text */}
+            </div>
+            <div className="buttons">
+              <button>SEE MORE</button>
+              <button>SUBSCRIBE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="thumbnail">
+        <div className="item active">
+          <img src={cr1} alt="Thumbnail 1" />
+          <div className="content">
+            <div className="title">Name Slider</div>
+            <div className="description">Description</div>
+          </div>
+        </div>
+        <div className="item">
+          <img src={cr2} alt="Thumbnail 2" />
+          <div className="content">
+            <div className="title">Name Slider</div>
+            <div className="description">Description</div>
+          </div>
+        </div>
+        <div className="item">
+          <img src={cr2} alt="Thumbnail 3" />
+          <div className="content">
+            <div className="title">Name Slider</div>
+            <div className="description">Description</div>
+          </div>
+        </div>
+        <div className="item">
+          <img src={cr2} alt="Thumbnail 4" />
+          <div className="content">
+            <div className="title">Name Slider</div>
+            <div className="description">Description</div>
+          </div>
+        </div>
+      </div>
+      <div className="arrows">
+        <button id="prev">&lt;</button>
+        <button id="next">&gt;</button>
+      </div>
+      <div className="time"></div>
+    </div>
 
 
-</Carousel>
+
+
+
+
+
+ 
 
 
 <div id="main-section2" className="landing-page-main mid-section sky-red-background">
@@ -311,41 +446,42 @@ const handleSearchClick = () => {
         </div>
       </div>
 
-   {/* Footer Section */}
-   <footer class="footer">
+ 
+            {/* Footer Section */}
+            <footer class="footer">
     <div class="container">
       <div class="row">
         <div class="footer-col">
           <h4>company</h4>
           <ul>
-            <li><a href="#">our services</a></li>
-            <li><a href="#">privacy policy</a></li>
-            <li><a href="#">affiliate program</a></li>
+            <li><Link to="#">our services</Link></li>
+            <li><Link to="#">privacy policy</Link></li>
+            <li><Link to="#">affiliate program</Link></li>
           </ul>
         </div>
-        <div class="footer-col">
+        <div class="footer-col" onClick={handleLogoClick1}>
           <h4>about us</h4>
           <ul>
-            <li><a href="#">Who we are</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Social Commitment</a></li>
-            <li><a href="#">Ledership team</a></li>
+            <li><Link to="" >Who we are</Link></li>
+            <li><Link to="">Our Journey & Story </Link></li>
+            <li><Link to="#">Events</Link></li>
+            <li><Link to="#">Social Commitment</Link></li>
+            <li><Link to="#">Ledership team</Link></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Careers</h4>
           <ul>
-            <li><a href="#">Explore opportunities</a></li>
+            <li><Link to="#">Explore opportunities</Link></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>follow us</h4>
           <div className="social-links">
-              <a href="#"><FontAwesomeIcon icon={faFacebookF} /></a>
-              <a href="#"><FontAwesomeIcon icon={faTwitter} /></a>
-              <a href="#"><FontAwesomeIcon icon={faInstagram} /></a>
-              <a href="#"><FontAwesomeIcon icon={faLinkedinIn} /></a>
+              <Link to="#"><FontAwesomeIcon icon={faFacebookF} /></Link>
+              <Link to="#"><FontAwesomeIcon icon={faTwitter} /></Link>
+              <Link to="#"><FontAwesomeIcon icon={faInstagram} /></Link>
+              <Link to="#"><FontAwesomeIcon icon={faLinkedinIn} /></Link>
             </div>
         </div>
       </div>
@@ -359,6 +495,7 @@ const handleSearchClick = () => {
         </div>
       </div>
  </footer>
+  
 
     </div>
   )

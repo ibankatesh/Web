@@ -12,6 +12,11 @@ import Partners from './MyComponents/Partners';
 import Whatwedo from './MyComponents/Whatwedo';
 import Industries from './MyComponents/Industries';
 import Approach from './MyComponents/Approach';
+import Insights from './MyComponents/Insights';
+import AboutUs from './pages/About';
+
+
+
 
 function App() {
   return (
@@ -25,6 +30,8 @@ function App() {
         <Route exact path="/indsutries" element={<Industries/>} />
         <Route exact path="/approach" element={<Approach/>} />
         <Route exact path="/our-partners" element={<Partners/>} />
+        <Route exact path="/insights" element={<Insights/>} />
+        <Route exact path="about-us" element={<AboutUs/>}/>
 
       </Routes>
     </BrowserRouter>

@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import '../Assets/styles/header.css';
+import '../Assets/styles/approach.css';
 import logo from '../Assets/images/NyK.png'; // Import your logo image
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes, faBars, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faTimes, faBars} from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faTwitter, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'; // Import brand icons
 import img5 from '../Assets/images/img5.jpg';
 import img6 from '../Assets/images/img6.jpg';
@@ -12,8 +13,8 @@ import Carousel from 'react-bootstrap/Carousel';
 import { Link } from 'react-router-dom';
 
 const Approach = () => {
-  const [visible, setVisible] = useState(true);
-  const [searchVisible, setSearchVisible] = useState(false); 
+  const [visible] = useState(true);
+ 
   
 
   const handleLogoClick = () => {
@@ -21,16 +22,20 @@ const Approach = () => {
     window.location.href = '/';
 };
 
-const handleSearchClick = () => {
-    // Toggle the visibility of the search box
-    setSearchVisible(!searchVisible);
-};
+
+
+    const handleLogoClick1 = () => {
+      // Redirect to the home page
+      window.location.href = '/about-us';
+  };
+
+
   return (
 <div>
-<nav style={{ paddingTop: '30px', visibility: visible ? 'visible' : 'hidden', backgroundColor: 'transparent', position: 'fixed', width: '100%', zIndex: '1000' }}>
+<nav className='nav1 navbar-scrolled'  style={{ visibility: visible ? 'visible' : 'hidden', backgroundColor:'#312f36',position: 'fixed', width: '100%', zIndex: '1000' }}>
       <div className="wrapper" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div className="logo" onClick={handleLogoClick}>
-          <img src={logo} alt="NyKinSky Logo" style={{ width: '80px', paddingTop: '10px', height: 'auto', cursor: 'pointer' }} />
+          <img src={logo} alt="NyKinSky Logo" className="logo-image" style={{ width: '80px', height: 'auto', paddingTop: '10px', cursor: 'pointer' }} />
         </div>
         <input type="radio" name="slider" id="menu-btn" />
         <input type="radio" name="slider" id="close-btn" />
@@ -54,27 +59,27 @@ const handleSearchClick = () => {
                   <li>
                   <Link to="/what-we-do">Aritifical Intelligence(AI)</Link>
                   </li>
-                  <li><a href="#">Cloud Transformation</a></li>
-                  <li><a href="#">Data Analytics</a></li>
-                  <li><a href="#">Managed Security Services</a></li>
+                  <li><Link to="#">Cloud Transformation</Link></li>
+                  <li><Link to="#">Data Analytics</Link></li>
+                  <li><Link to="#">Managed Security Services</Link></li>
                 </ul>
               </div>
               <div className="row">
                 <header>Digital Solution</header>
                 <ul className="mega-links">
-                  <li><a href="#">Scaled Operations</a></li>
-                  <li><a href="#">SaaS and Enterprise Apps</a></li>
-                  <li><a href="#">Next Gen Talent</a></li>
-                  <li><a href="#">Digital Services</a></li>
+                  <li><Link to="#">Scaled Operations</Link></li>
+                  <li><Link to="#">SaaS and Enterprise Apps</Link></li>
+                  <li><Link to="#">Next Gen Talent</Link></li>
+                  <li><Link to="#">Digital Services</Link></li>
                 </ul>
               </div>
               <div className="row">
                 <header>Platforms</header>
                 <ul className="mega-links">
-                  <li><a href="#">Cyber Proof</a></li>
-                  <li><a href="#">SmartOps</a></li>
-                  <li><a href="#">Privacy Seal</a></li>
-                  <li><a href="#">Website design</a></li>
+                  <li><Link to="#">Cyber Proof</Link></li>
+                  <li><Link to="#">SmartOps</Link></li>
+                  <li><Link to="#">Privacy Seal</Link></li>
+                  <li><Link to="#">Website design</Link></li>
                 </ul>
               </div>
             </div>
@@ -82,6 +87,7 @@ const handleSearchClick = () => {
         </li>
 
 
+      
         <li style={{ marginRight: '20px' }}>
         <Link to="/indsutries">Industries</Link>
           <input type="checkbox" id="showMega" />
@@ -90,31 +96,30 @@ const handleSearchClick = () => {
               <div className="row">
                 <img src={img6} alt="" />
               </div>
-              <div className="row">
-                <header>Design Services</header>
+              <div className="row">  
                 <ul className="mega-links">
-                  <li><a href="#">Graphics</a></li>
-                  <li><a href="#">Vectors</a></li>
-                  <li><a href="#">Business cards</a></li>
-                  <li><a href="#">Custom logo</a></li>
+                  <li><Link to="#">Retail</Link></li>
+                  <li><Link to="#">CPG</Link></li>
+                  <li><Link to="#">BFS</Link></li>
+                  <li><Link to="#">Insurance</Link></li>
+                  <li><Link to="#">Manufacturing</Link></li>
+                </ul>
+              </div>
+              <div className="row">  
+                <ul className="mega-links">
+                 
+                  <li><Link to="#">Transportation & logistics</Link></li>
+                  <li><Link to="#">Life Sciences</Link></li>
+                  <li><Link to="#">HealthCare</Link></li>
+                  <li><Link to="#">Technology, Telecom & Media  </Link></li>
                 </ul>
               </div>
               <div className="row">
-                <header>Email Services</header>
                 <ul className="mega-links">
-                  <li><a href="#">Personal Email</a></li>
-                  <li><a href="#">Business Email</a></li>
-                  <li><a href="#">Mobile Email</a></li>
-                  <li><a href="#">Web Marketing</a></li>
-                </ul>
-              </div>
-              <div className="row">
-                <header>Security services</header>
-                <ul className="mega-links">
-                  <li><a href="#">Site Seal</a></li>
-                  <li><a href="#">VPS Hosting</a></li>
-                  <li><a href="#">Privacy Seal</a></li>
-                  <li><a href="#">Website design</a></li>
+                  <li><Link to="#">Site Seal</Link></li>
+                  <li><Link to="#">VPS Hosting</Link></li>
+                  <li><Link to="#">Privacy Seal</Link></li>
+                  <li><Link to="#">Website design</Link></li>
                 </ul>
               </div>
             </div>
@@ -130,33 +135,34 @@ const handleSearchClick = () => {
           <div className="mega-box">
             <div className="content">
               <div className="row">
+                
                 <img src="img.jpg" alt="" />
               </div>
               <div className="row">
                 <header>Design Services</header>
                 <ul className="mega-links">
-                  <li><a href="#">Graphics</a></li>
-                  <li><a href="#">Vectors</a></li>
-                  <li><a href="#">Business cards</a></li>
-                  <li><a href="#">Custom logo</a></li>
+                  <li><Link to="#">Graphics</Link></li>
+                  <li><Link to="#">Vectors</Link></li>
+                  <li><Link to="#">Business cards</Link></li>
+                  <li><Link to="#">Custom logo</Link></li>
                 </ul>
               </div>
               <div className="row">
                 <header>Email Services</header>
                 <ul className="mega-links">
-                  <li><a href="#">Personal Email</a></li>
-                  <li><a href="#">Business Email</a></li>
-                  <li><a href="#">Mobile Email</a></li>
-                  <li><a href="#">Web Marketing</a></li>
+                  <li><Link to="#">Personal Email</Link></li>
+                  <li><Link to="#">Business Email</Link></li>
+                  <li><Link to="#">Mobile Email</Link></li>
+                  <li><Link to="#">Web Marketing</Link></li>
                 </ul>
               </div>
               <div className="row">
                 <header>Security services</header>
                 <ul className="mega-links">
-                  <li><a href="#">Site Seal</a></li>
-                  <li><a href="#">VPS Hosting</a></li>
-                  <li><a href="#">Privacy Seal</a></li>
-                  <li><a href="#">Website design</a></li>
+                  <li><Link to="#">Site Seal</Link></li>
+                  <li><Link to="#">VPS Hosting</Link></li>
+                  <li><Link to="#">Privacy Seal</Link></li>
+                  <li><Link to="#">Website design</Link></li>
                 </ul>
               </div>
             </div>
@@ -177,57 +183,45 @@ const handleSearchClick = () => {
             <div className="content">
               <div className="row">
               <ul className="mega-links">
-                  <li><a href="#">Visionary Viewpoints</a></li>
+                  <li><Link to="#">Visionary Viewpoints</Link></li>
                 
                 </ul>
               </div>
               <div className="row">
                 
                 <ul className="mega-links">
-                  <li><a href="#">Case Studies</a></li>
+                  <li><Link to="#">Case Studies</Link></li>
                 
                 </ul>
               </div>
               <div className="row">
                 
                 <ul className="mega-links">
-                  <li><a href="#">Insights</a></li>
+                  <li><Link to="#">Insights</Link></li>
                 </ul>
               </div>
               <div className="row">
               
                 <ul className="mega-links">
-                  <li><a href="#">WhitePapers</a></li>
+                  <li><Link to="#">WhitePapers</Link></li>
                 </ul>
               </div>
             </div>
           </div>
         </li>
         
-        <li style={{ marginRight: '20px' }}><a href="#">Careers</a></li>
-        
-          {/* Search box adjacent to the search icon */}
-          <li style={{ position: 'relative' }}>
-            <FontAwesomeIcon icon={faSearch} onClick={handleSearchClick} style={{ cursor: 'pointer' }} />
-            {searchVisible && (
-              <div className="search-box" style={{ position: 'absolute', top: '100%', left: 0, display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
-                {/* Your search box input and submit button */}
-                <input type="text" placeholder="Search..." style={{ marginRight: '10px' }} />
-                <button type="submit">Submit</button>
-              </div>
-            )}
-          </li>
+        <li style={{ marginRight: '20px' }}><Link to="#">Careers</Link></li>   
       </ul>
       <label htmlFor="menu-btn" className="btn menu-btn"><FontAwesomeIcon icon={faBars} /></label>
-      
     </div>
-    
-    <hr/>
+  
   </nav>
+  <div style={{ height: '90px' }}></div>
 
 
 
-  <Carousel >
+
+  <Carousel class="header_App" >
                 <Carousel.Item>
                     <div className="carousel-item-container">
                         <img style={{ height: '90vh' }} className="d-block w-100" src="" alt="" />
@@ -235,21 +229,94 @@ const handleSearchClick = () => {
                             <h3>First slide label</h3>
                             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>   
                         </div>
-                        <div className="processing-line" id="processing-line-1"></div> {/* Processing line */}
+                       
                     </div>
                 </Carousel.Item>
 
 
 </Carousel>
+
+
+<section class="section__container_App room__container_App">
+      <p class="section__subheader_App">OUR APPROACH</p>
+      <h6 class="section__header_App">Join us in reshaping the future of retail with AI-driven innovation and transformative solutions. Experience the power of NyKinSky Research & Analytics in driving growth, efficiency, and success for retailers worldwide.</h6>
+      <div class="room__grid">
+        <div class="room__card">
+          <div class="room__card__image">
+            <img src={img6} alt="room" />
+          </div>
+          <div class="room__card__details">
+            <h4>Integrated AI/ML Solutions: </h4>
+            <p>
+            Leverage our comprehensive suite of AI/ML tools for seamless model development and deployment across a wide range of applications, including forecasting and inventory optimization.
+            </p>
+      
+          </div>
+        </div>
+        <div class="room__card">
+          <div class="room__card__image">
+            <img src={img6} alt="room" />
+            </div>
+          <div class="room__card__details">
+            <h4>Customer Insights Acceleration: </h4>
+            <p>
+            Utilize our templated accelerators and frameworks to extract actionable insights from customer data, enabling informed decision-making and maximizing customer lifetime value.
+            </p>
+          </div>
+        </div>
+        <div class="room__card">
+          <div class="room__card__image">
+            <img src={img6} alt="room" />
+          </div>
+          <div class="room__card__details">
+            <h4>Simulation and Optimization: </h4>
+            <p>
+            Empower your business with the ability to simulate and optimize operations, effectively navigating supply chain disruptions and financial uncertainties.
+            </p>
+          </div>
+        </div>
+        <div class="room__card">
+          <div class="room__card__image">
+            <img src={img6} alt="room" />
+          </div>
+          <div class="room__card__details">
+            <h4> Precision Measurement:</h4>
+            <p>
+            Drive performance excellence through advanced measurement techniques such as market mix Modeling, multi-touch attribution, and rigorous testing methodologies. 
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
   
  {/* Middle Section */}
  <div id="main-section" className="landing-page-main">
     <div className="left-aligned">
       <h5><b>OUR APPROACH</b></h5>
-      <h2><b>Ahead of the curve</b></h2>
-      <p>From helping insurance companies and health providers deliver more cost-effective care to enabling faster,<br/>
-        safer banking transactions, we work closely with clients across our seven key verticals. <br/>
-        When you partner with us, we ensure every solution responds at speed to today’s market trends, while putting you in position to thrive amid tomorrow’s unknowns.</p>
+      
+      <p>1. Integrated AI/ML Solutions: Leverage our comprehensive suite of AI/ML tools for seamless model development and deployment across a wide range of applications, including forecasting and inventory optimization. </p>
+      <p>
+      2. Customer Insights Acceleration: Utilize our templated accelerators and frameworks to extract actionable insights from customer data, enabling informed decision-making and maximizing customer lifetime value. 
+
+3. Simulation and Optimization: Empower your business with the ability to simulate and optimize operations, effectively navigating supply chain disruptions and financial uncertainties. 
+
+4. Precision Measurement: Drive performance excellence through advanced measurement techniques such as market mix Modeling, multi-touch attribution, and rigorous testing methodologies. 
+      </p>
+
+      <p><b> 
+
+Join us in reshaping the future of retail with AI-driven innovation and transformative solutions. Experience the power of NyKinSky Research & Analytics in driving growth, efficiency, and success for retailers worldwide. </b></p>
     </div>
         
 </div>
@@ -259,40 +326,42 @@ const handleSearchClick = () => {
 
 
    {/* Footer Section */}
-   <footer class="footer">
+  
+            {/* Footer Section */}
+            <footer class="footer">
     <div class="container">
       <div class="row">
         <div class="footer-col">
           <h4>company</h4>
           <ul>
-            <li><a href="#">our services</a></li>
-            <li><a href="#">privacy policy</a></li>
-            <li><a href="#">affiliate program</a></li>
+            <li><Link to="#">our services</Link></li>
+            <li><Link to="#">privacy policy</Link></li>
+            <li><Link to="#">affiliate program</Link></li>
           </ul>
         </div>
-        <div class="footer-col">
+        <div class="footer-col" onClick={handleLogoClick1}>
           <h4>about us</h4>
           <ul>
-            <li><a href="#">Who we are</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Social Commitment</a></li>
-            <li><a href="#">Ledership team</a></li>
+            <li><Link to="" >Who we are</Link></li>
+            <li><Link to="">Our Journey & Story </Link></li>
+            <li><Link to="#">Events</Link></li>
+            <li><Link to="#">Social Commitment</Link></li>
+            <li><Link to="#">Ledership team</Link></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Careers</h4>
           <ul>
-            <li><a href="#">Explore opportunities</a></li>
+            <li><Link to="#">Explore opportunities</Link></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>follow us</h4>
           <div className="social-links">
-              <a href="#"><FontAwesomeIcon icon={faFacebookF} /></a>
-              <a href="#"><FontAwesomeIcon icon={faTwitter} /></a>
-              <a href="#"><FontAwesomeIcon icon={faInstagram} /></a>
-              <a href="#"><FontAwesomeIcon icon={faLinkedinIn} /></a>
+              <Link to="#"><FontAwesomeIcon icon={faFacebookF} /></Link>
+              <Link to="#"><FontAwesomeIcon icon={faTwitter} /></Link>
+              <Link to="#"><FontAwesomeIcon icon={faInstagram} /></Link>
+              <Link to="#"><FontAwesomeIcon icon={faLinkedinIn} /></Link>
             </div>
         </div>
       </div>
