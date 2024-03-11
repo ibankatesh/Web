@@ -71,7 +71,7 @@ body {
       rgba(255, 255, 255, 0),
       var(--primary-color1)
     ),
-    url("../images/header-1.jpeg");
+    url("../images/Industries_1.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -145,4 +145,7 @@ body {
 .about1__content a:hover span {
   transform: translateX(10px);
 }
+
+
+
 

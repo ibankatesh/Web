@@ -5,11 +5,14 @@ import logo from '../Assets/images/NyK.png'; // Import your logo image
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faBars} from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faTwitter, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'; // Import brand icons
-import img5 from '../Assets/images/img5.jpg';
-import img6 from '../Assets/images/img6.jpg';
 
+import img6 from '../Assets/images/Approach_1.jpg';
 
-import Carousel from 'react-bootstrap/Carousel';
+import slider2 from '../Assets/images/services_2.jpg';
+import Approach_2 from '../Assets/images/Approach_2.jpg';
+import Approach_3 from '../Assets/images/Approach_3.jpg';
+import Approach_4 from '../Assets/images/Approach_4.jpg';
+
 import { Link } from 'react-router-dom';
 
 const Approach = () => {
@@ -22,17 +25,17 @@ const Approach = () => {
     window.location.href = '/';
 };
 
+const handleLinkClick = () => {
+  // Reload the page before navigating
+  window.location.reload();
+};
 
 
-    const handleLogoClick1 = () => {
-      // Redirect to the home page
-      window.location.href = '/about-us';
-  };
 
 
   return (
 <div>
-<nav className='nav1 navbar-scrolled'  style={{ visibility: visible ? 'visible' : 'hidden', backgroundColor:'#312f36',position: 'fixed', width: '100%', zIndex: '1000' }}>
+<nav className='nav1 navbar-scrolled' style={{ visibility: visible ? 'visible' : 'hidden', backgroundColor:'#312f36',position: 'fixed', width: '100%', zIndex: '1000' }}>
       <div className="wrapper" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div className="logo" onClick={handleLogoClick}>
           <img src={logo} alt="NyKinSky Logo" className="logo-image" style={{ width: '80px', height: 'auto', paddingTop: '10px', cursor: 'pointer' }} />
@@ -46,48 +49,45 @@ const Approach = () => {
   
         
         <li style={{ marginRight: '20px'}}>
-        <Link to="/what-we-do">What We do</Link>
+        <Link to="/Services-AI">Services</Link>
           <input type="checkbox" id="showMega" />
           <div className="mega-box">
             <div className="content">
               <div className="row">
-                <img src={img5} alt="" />
+                <img src={img6} alt="" />
               </div>
               <div className="row">
-                <header>Digital Business Transformation</header>
+                
                 <ul className="mega-links">
-                  <li>
-                  <Link to="/what-we-do">Aritifical Intelligence(AI)</Link>
-                  </li>
-                  <li><Link to="#">Cloud Transformation</Link></li>
-                  <li><Link to="#">Data Analytics</Link></li>
-                  <li><Link to="#">Managed Security Services</Link></li>
+                  <li><Link to="/Services-AI">Aritifical Intelligence(AI)</Link></li>
+                  <li><Link to="/Cloud-Transformation">Cloud Transformation</Link></li>
+                  <li><Link to="/Data-Engineering">Data Engineering</Link></li>
+                  <li><Link to="/Generative-AI">Generative AI</Link></li>
                 </ul>
               </div>
               <div className="row">
-                <header>Digital Solution</header>
+                
                 <ul className="mega-links">
-                  <li><Link to="#">Scaled Operations</Link></li>
-                  <li><Link to="#">SaaS and Enterprise Apps</Link></li>
-                  <li><Link to="#">Next Gen Talent</Link></li>
-                  <li><Link to="#">Digital Services</Link></li>
+                  <li><Link to="/Experience-Consulting">Experience Consulting</Link></li>
+                  <li><Link to="/Application-Engineering">Application Engineering</Link></li>
+                  <li><Link to="/Business-Intelligence">Business Intelligence</Link></li>
+                  <li><Link to="/MLOps">MLOps</Link></li>
                 </ul>
               </div>
               <div className="row">
-                <header>Platforms</header>
+               
                 <ul className="mega-links">
-                  <li><Link to="#">Cyber Proof</Link></li>
-                  <li><Link to="#">SmartOps</Link></li>
-                  <li><Link to="#">Privacy Seal</Link></li>
-                  <li><Link to="#">Website design</Link></li>
+                  <li><Link to="/Data-Science">Data Science</Link></li>
+                  <li><Link to="/AI-Engineering">AI Engineering</Link></li>
+                  <li><Link to="/ML-Products & Platforms">ML Products & Platforms</Link></li>
+  
                 </ul>
               </div>
             </div>
           </div>
         </li>
 
-
-      
+        
         <li style={{ marginRight: '20px' }}>
         <Link to="/indsutries">Industries</Link>
           <input type="checkbox" id="showMega" />
@@ -98,28 +98,28 @@ const Approach = () => {
               </div>
               <div className="row">  
                 <ul className="mega-links">
-                  <li><Link to="#">Retail</Link></li>
-                  <li><Link to="#">CPG</Link></li>
-                  <li><Link to="#">BFS</Link></li>
-                  <li><Link to="#">Insurance</Link></li>
-                  <li><Link to="#">Manufacturing</Link></li>
+                  <li><Link to="/indsutries">Retail</Link></li>
+                  <li><Link to="/industries-cpg">CPG</Link></li>
+                  <li><Link to="/industries-bfs">BFS</Link></li>
+                  <li><Link to="/industries-insurance">Insurance</Link></li>
+                  <li><Link to="/industries-Manufacturing">Manufacturing</Link></li>
                 </ul>
               </div>
               <div className="row">  
                 <ul className="mega-links">
                  
-                  <li><Link to="#">Transportation & logistics</Link></li>
-                  <li><Link to="#">Life Sciences</Link></li>
-                  <li><Link to="#">HealthCare</Link></li>
-                  <li><Link to="#">Technology, Telecom & Media  </Link></li>
+                  <li><Link to="/industries-Transportation-Logistics">Transportation & logistics</Link></li>
+                  <li><Link to="/industries-Life-Science">Life Sciences</Link></li>
+                  <li><Link to="/industries-Healthcare">HealthCare</Link></li>
+                  <li><Link to="/industries-tech-telecom-media">Technology, Telecom & Media  </Link></li>
                 </ul>
               </div>
               <div className="row">
                 <ul className="mega-links">
-                  <li><Link to="#">Site Seal</Link></li>
-                  <li><Link to="#">VPS Hosting</Link></li>
-                  <li><Link to="#">Privacy Seal</Link></li>
-                  <li><Link to="#">Website design</Link></li>
+                  <li><Link to="#"></Link></li>
+                  <li><Link to="#"></Link></li>
+                  <li><Link to="#"></Link></li>
+                  <li><Link to="#"></Link></li>
                 </ul>
               </div>
             </div>
@@ -177,7 +177,7 @@ const Approach = () => {
 
 
         <li style={{ marginRight: '20px' }}>
-        <Link to="/approach">Insights</Link>
+        <Link to="/insights">Insights</Link>
           <input type="checkbox" id="showMega" />
           <div className="mega-box">
             <div className="content">
@@ -221,20 +221,30 @@ const Approach = () => {
 
 
 
-  <Carousel class="header_App" >
-                <Carousel.Item>
-                    <div className="carousel-item-container">
-                        <img style={{ height: '90vh' }} className="d-block w-100" src="" alt="" />
-                        <div className="text-container">
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>   
-                        </div>
-                       
-                    </div>
-                </Carousel.Item>
 
-
-</Carousel>
+  <div className="slider">
+            {/* list Items */}
+            <div className="list">
+                {/* Slider items */}
+                <div className="item active">
+                    <img src={slider2} alt="Slider" />
+                    {/*<div className="content">
+                        <p>design</p>
+                        <h2>Slider 01</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque?
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex.
+                        </p>
+    </div>*/}
+                </div>
+                
+             
+                
+               
+            </div>
+           
+           
+        </div>
 
 
 <section class="section__container_App room__container_App">
@@ -255,7 +265,7 @@ const Approach = () => {
         </div>
         <div class="room__card">
           <div class="room__card__image">
-            <img src={img6} alt="room" />
+            <img src={Approach_2} alt="room" />
             </div>
           <div class="room__card__details">
             <h4>Customer Insights Acceleration: </h4>
@@ -266,7 +276,7 @@ const Approach = () => {
         </div>
         <div class="room__card">
           <div class="room__card__image">
-            <img src={img6} alt="room" />
+            <img src={Approach_3 } alt="room" />
           </div>
           <div class="room__card__details">
             <h4>Simulation and Optimization: </h4>
@@ -277,7 +287,7 @@ const Approach = () => {
         </div>
         <div class="room__card">
           <div class="room__card__image">
-            <img src={img6} alt="room" />
+            <img src={Approach_4} alt="room" />
           </div>
           <div class="room__card__details">
             <h4> Precision Measurement:</h4>
@@ -299,27 +309,7 @@ const Approach = () => {
 
 
 
-  
- {/* Middle Section */}
- <div id="main-section" className="landing-page-main">
-    <div className="left-aligned">
-      <h5><b>OUR APPROACH</b></h5>
-      
-      <p>1. Integrated AI/ML Solutions: Leverage our comprehensive suite of AI/ML tools for seamless model development and deployment across a wide range of applications, including forecasting and inventory optimization. </p>
-      <p>
-      2. Customer Insights Acceleration: Utilize our templated accelerators and frameworks to extract actionable insights from customer data, enabling informed decision-making and maximizing customer lifetime value. 
 
-3. Simulation and Optimization: Empower your business with the ability to simulate and optimize operations, effectively navigating supply chain disruptions and financial uncertainties. 
-
-4. Precision Measurement: Drive performance excellence through advanced measurement techniques such as market mix Modeling, multi-touch attribution, and rigorous testing methodologies. 
-      </p>
-
-      <p><b> 
-
-Join us in reshaping the future of retail with AI-driven innovation and transformative solutions. Experience the power of NyKinSky Research & Analytics in driving growth, efficiency, and success for retailers worldwide. </b></p>
-    </div>
-        
-</div>
       
 
 
@@ -327,26 +317,23 @@ Join us in reshaping the future of retail with AI-driven innovation and transfor
 
    {/* Footer Section */}
   
-            {/* Footer Section */}
-            <footer class="footer">
+               {/* Footer Section */}
+               <footer class="footer" >
     <div class="container">
       <div class="row">
         <div class="footer-col">
           <h4>company</h4>
           <ul>
-            <li><Link to="#">our services</Link></li>
+            <li><Link to="/Services-AI">our services</Link></li>
             <li><Link to="#">privacy policy</Link></li>
-            <li><Link to="#">affiliate program</Link></li>
+          
           </ul>
         </div>
-        <div class="footer-col" onClick={handleLogoClick1}>
+        <div class="footer-col"  onClick={handleLinkClick}  >
           <h4>about us</h4>
           <ul>
-            <li><Link to="" >Who we are</Link></li>
-            <li><Link to="">Our Journey & Story </Link></li>
-            <li><Link to="#">Events</Link></li>
-            <li><Link to="#">Social Commitment</Link></li>
-            <li><Link to="#">Ledership team</Link></li>
+            <li><Link to="/about-us" >Who we are</Link></li>
+            <li><Link to="/about-us">Our Journey & Story </Link></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -358,10 +345,10 @@ Join us in reshaping the future of retail with AI-driven innovation and transfor
         <div class="footer-col">
           <h4>follow us</h4>
           <div className="social-links">
-              <Link to="#"><FontAwesomeIcon icon={faFacebookF} /></Link>
+              <Link to="" ><FontAwesomeIcon icon={faFacebookF} /></Link>
               <Link to="#"><FontAwesomeIcon icon={faTwitter} /></Link>
-              <Link to="#"><FontAwesomeIcon icon={faInstagram} /></Link>
-              <Link to="#"><FontAwesomeIcon icon={faLinkedinIn} /></Link>
+              <Link to="https://www.instagram.com/nykinsky/" target='blank'><FontAwesomeIcon icon={faInstagram} /></Link>
+              <Link to="https://www.linkedin.com/company/nykinsky/mycompany/" target='blank'><FontAwesomeIcon icon={faLinkedinIn} /></Link>
             </div>
         </div>
       </div>

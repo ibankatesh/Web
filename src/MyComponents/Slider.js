@@ -1,10 +1,16 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import '../Assets/styles/carousel.css'; // Import CSS for the slider styles
-import img1 from '../Assets/images/img1.jpg';
-import img2 from '../Assets/images/img2.jpg';
-import img4 from '../Assets/images/img4.jpg';
-import img5 from '../Assets/images/img5.jpg';
-import img9 from '../Assets/images/img9.jpg';
+
+
+
+
+import slider2 from '../Assets/images/slider_1.jpg';
+
+import slider1 from '../Assets/images/slider_2.jpg';
+import slider3 from '../Assets/images/slider_3.jpg';
+
+
+
 
 const Slider = () => {
     const [items, setItems] = useState([]);
@@ -46,48 +52,48 @@ const Slider = () => {
             <div className="list">
                 {/* Slider items */}
                 <div className="item active">
-                    <img src={img1} alt="Slider" />
-                    <div className="content">
+                    <img src={slider2} alt="Slider" />
+                    {/*<div className="content">
                         <p>design</p>
                         <h2>Slider 01</h2>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque?
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex.
                         </p>
-                    </div>
+    </div>*/}
                 </div>
                 <div className="item">
-                    <img src={img2} alt="Slider" />
-                    <div className="content">
+                    <img src={slider1} alt="Slider" />
+                    {/*<div className="content">
                         <p>design</p>
-                        <h2>Slider 02</h2>
+                        <h2>Slider 01</h2>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque?
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex.
                         </p>
-                    </div>
+    </div>*/}
                 </div>
                 <div className="item">
-                    <img src={img9} alt="Slider " />
-                    <div className="content">
+                    <img src={slider3} alt="Slider " />
+                    {/*<div className="content">
                         <p>design</p>
-                        <h2>Slider 03</h2>
+                        <h2>Slider 01</h2>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque?
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex.
                         </p>
-                    </div>
+    </div>*/}
                 </div>
                 
                
             </div>
             
-            {/* button arrows */}
+            {/* button arrows 
             <div className="arrows">
                 <button id="prev">&lt;</button>
                 <button id="next">&gt;</button>
                 
-            </div>
+            </div>*/}
             <div className="processing-line1" id="processing-line-1"></div> {/* Processing line */}
         </div>
         
@@ -97,7 +103,7 @@ const Slider = () => {
         <div className="left-aligned"  style={{textAlign:'center',paddingTop:'80px'}}>
       <h3 style={{textAlign:'center'}}><b>WHAT WE DO</b></h3>
       <p>Real transformation demands hard work, persistence, and the right tools for the job. 
-        <br/>For over 20 years, we've redefined craftsmanship and shared our expertise to help our clients succeed.</p>
+        <br/>For over 14 years, we've redefined craftsmanship and shared our expertise to help our clients succeed.</p>
     </div>
         <div>
             
@@ -105,126 +111,102 @@ const Slider = () => {
                 
                 <div id="list">
                     <div className="item1">
-                        <img src={img4} alt="Chopper" className="avatar" />
+                        
                         <div className="content">
                             <table width="100%" cellSpacing="0">
                                 
+
                                 <tr>
-                                    <td colSpan="2" className="nameGroup">Thành viên băng Mũ Rơm</td>
+                                    <h4 style={{textAlign:'center', color:'red'}}>Services</h4>
+                                </tr>
+                                <tr>
+                                    <td colSpan="2" className="nameGroup">Aritifical Intelligence(AI)</td>
+                                </tr>
+                                <tr>
+                                    <td colSpan="2" className="nameGroup">Cloud Transformation</td>
+                                </tr>
+                                <tr>
+                                    <td colSpan="2" className="nameGroup">Data Engineering</td>
+                                </tr>
+
+                                <tr>
+                                    <td colSpan="2" className="nameGroup">Generative AI</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+               
+                    <div className="item1">
+                       {/* <img src={img4} alt="Chopper" className="avatar" /> */}
+                        <div className="content">
+                            <table width="100%" cellSpacing="0">
+                                
+                            <tr>
+                                    <h4 style={{textAlign:'center', color:'red'}}>Industries</h4>
+                                </tr>
+                                <tr>
+                                    <td colSpan="2" className="nameGroup">Retail</td>
+                                </tr>
+                                <tr>
+                                    <td colSpan="2" className="nameGroup">Cpg</td>
+                                </tr>
+                                <tr>
+                                    <td colSpan="2" className="nameGroup">Bfs</td>
+                                </tr>
+
+                                <tr>
+                                    <td colSpan="2" className="nameGroup">Manufacturing</td>
                                 </tr>
                             </table>
                         </div>
                     </div>
                     <div className="item1">
-                        <img src={img5} alt="Brook" className="avatar" />
+                        {/* <img src={img4} alt="Chopper" className="avatar" /> */}
                         <div className="content">
                             <table width="100%" cellSpacing="0">
+                                
+                                      
+                            <tr>
+                                    <h4 style={{textAlign:'center', color:'red'}}>Consulting</h4>
+                                </tr>
+
                                 <tr>
-                                    <td>Tên</td>
-                                    <td>Brook</td>
+                                    <td colSpan="2" className="nameGroup">Experience Consulting</td>
                                 </tr>
                                 <tr>
-                                    <td>Nghề nghiệp</td>
-                                    <td>Hải tặc</td>
+                                    <td colSpan="2" className="nameGroup">Application Engineering</td>
                                 </tr>
                                 <tr>
-                                    <td>Sức mạnh</td>
-                                    <td>Bất tử</td>
+                                    <td colSpan="2" className="nameGroup">Business Intelligence</td>
                                 </tr>
-                                <tr>
-                                    <td colSpan="2" className="nameGroup">Thành viên băng Mũ Rơm</td>
-                                </tr>
+
                             </table>
                         </div>
                     </div>
                     <div className="item1">
-                        <img src={img5} alt="Sanji" className="avatar" />
+                        {/* <img src={img4} alt="Chopper" className="avatar" /> */}
                         <div className="content">
                             <table width="100%" cellSpacing="0">
+
+                            <tr>
+                                    <h4 style={{textAlign:'center', color:'red'}}>Differentiate with AI/ML  </h4>
+                                </tr>
+
                                 <tr>
-                                    <td>Tên</td>
-                                    <td>Sanji</td>
+                                    <td colSpan="2" className="nameGroup">Data Science</td>
                                 </tr>
                                 <tr>
-                                    <td>Nghề nghiệp</td>
-                                    <td>Đầu bếp</td>
+                                    <td colSpan="2" className="nameGroup">AI Engineering</td>
                                 </tr>
                                 <tr>
-                                    <td>Sức mạnh</td>
-                                    <td>Chân lửa</td>
+                                    <td colSpan="2" className="nameGroup">ML Products & Platforms</td>
                                 </tr>
-                                <tr>
-                                    <td colSpan="2" className="nameGroup">Thành viên băng Mũ Rơm</td>
-                                </tr>
+                                
+                                
                             </table>
                         </div>
                     </div>
-                    <div className="item1">
-                        <img src={img5} alt="Usopp" className="avatar" />
-                        <div className="content">
-                            <table width="100%" cellSpacing="0">
-                                <tr>
-                                    <td>Tên</td>
-                                    <td>Usopp</td>
-                                </tr>
-                                <tr>
-                                    <td>Nghề nghiệp</td>
-                                    <td>Xạ thủ</td>
-                                </tr>
-                                <tr>
-                                    <td>Sức mạnh</td>
-                                    <td>Chém gió</td>
-                                </tr>
-                                <tr>
-                                    <td colSpan="2" className="nameGroup">Thành viên băng Mũ Rơm</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                    <div className="item1">
-                        <img src={img5} alt="Nami" className="avatar" />
-                        <div className="content">
-                            <table width="100%" cellSpacing="0">
-                                <tr>
-                                    <td>Tên</td>
-                                    <td>Nami</td>
-                                </tr>
-                                <tr>
-                                    <td>Nghề nghiệp</td>
-                                    <td>Hoa tiêu</td>
-                                </tr>
-                                <tr>
-                                    <td>Sức mạnh</td>
-                                    <td>Ăn hiếp đồng đội</td>
-                                </tr>
-                                <tr>
-                                    <td colSpan="2" className="nameGroup">Thành viên băng Mũ Rơm</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                    <div className="item1">
-                        <img src={img5} alt="Robin" className="avatar" />
-                        <div className="content">
-                            <table width="100%" cellSpacing="0">
-                                <tr>
-                                    <td>Tên</td>
-                                    <td>Robin</td>
-                                </tr>
-                                <tr>
-                                    <td>Nghề nghiệp</td>
-                                    <td>Hải tặc</td>
-                                </tr>
-                                <tr>
-                                    <td>Sức mạnh</td>
-                                    <td>Nghìn tay</td>
-                                </tr>
-                                <tr>
-                                    <td colSpan="2" className="nameGroup">Thành viên băng Mũ Rơm</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         
